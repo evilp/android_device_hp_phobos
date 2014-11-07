@@ -38,6 +38,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := dalmore
 
 # Kernel
+#BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive 
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -64,9 +65,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 805306368 # 768M
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5385486336 # 5G
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 1073741824 # 1G
-# test vendor app Partition
-BOARD_APPIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_APPIMAGE_PARTITION_SIZE := 367001600 # 350M
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -93,7 +91,7 @@ WIFI_DRIVER_FW_PATH_P2P     := "/vendor/firmware/bcm43341/fw_bcmdhd_p2p.bin"
 
 # SELINUX Defines
 BOARD_SEPOLICY_DIRS := \
-    device/asus/tf701t/sepolicy
+    device/hp/phobos/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     file_contexts \
@@ -110,3 +108,36 @@ BOARD_SEPOLICY_UNION := \
     healthd.te \
     domain.te \
     ueventd.te
+    
+#twrp
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+DEVICE_RESOLUTION := 1920x1080
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_NO_USB_STORAGE := true
+TW_NO_REBOOT_BOOTLOADER := false
+TW_NO_REBOOT_RECOVERY := false
+TW_NO_BATT_PERCENT := true
+TW_NO_CPU_TEMP := true
+#TW_INCLUDE_BLOBPACK := true
+TW_HAS_MTP := true
+
+#TW_INCLUDE_DUMLOCK := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sdcard"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sdcard"
+#TWRP_EVENT_LOGGING := true
+
+#TW_INCLUDE_CRYPTO := true
+#TW_CRYPTO_FS_TYPE := "ext4"
+#TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/sdhci-tegra.3/by-name/UDA"
+#TW_CRYPTO_MNT_POINT := "/data"
+#TW_CRYPTO_FS_OPTIONS := "data=ordered,delalloc"
+#TW_CRYPTO_FS_FLAGS := "0x00000406"
+#TW_CRYPTO_KEY_LOC := "footer"
+
+#TWHAVE_SELINUX := true
+
+TW_BRIGHTNESS_FILE := /sys/class/backlight/pwm-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
