@@ -35,7 +35,7 @@ else
 endif
 
 # prebuild kernel
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
 
 # twrp
@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
 # build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet
 
-# build.prob
+# build.prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	BUILD_UTC_DATE=0 \
 	PRODUCT_MANUFACTURER=Hewlett-Packard \
@@ -63,4 +63,4 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_NAME	:= full_phobos
 PRODUCT_DEVICE	:= phobos
 PRODUCT_BRAND	:= hp
-PRODUCT_MODEL	:= Slate 21
+PRODUCT_MODEL	:= "Slate 21"

@@ -44,8 +44,8 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # Try to build the kernel
-TARGET_KERNEL_SOURCE := kernel/hp/phobos
-TARGET_KERNEL_CONFIG := cyanogenmod_phobos_defconfig
+#TARGET_KERNEL_SOURCE := kernel/hp/phobos
+#TARGET_KERNEL_CONFIG := cyanogenmod_phobos_defconfig
 # fallback to prebuild kernel
 TARGET_PREBUILT_KERNEL := device/hp/phobos/kernel
 
