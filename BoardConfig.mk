@@ -69,7 +69,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 1073741824 # 1G
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RECOVERY_INITRC := device/hp/phobos/recovery/init.rc
+#TARGET_RECOVERY_INITRC := device/hp/phobos/recovery/init.rc
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/backlight/pwm-backlight/brightness\"
