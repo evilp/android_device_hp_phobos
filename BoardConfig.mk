@@ -119,7 +119,7 @@ TW_NO_REBOOT_BOOTLOADER := false
 TW_NO_REBOOT_RECOVERY := false
 TW_NO_BATT_PERCENT := true
 #TW_NO_CPU_TEMP := true
-TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone3/temp
+TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone4/temp
 #TW_INCLUDE_BLOBPACK := true
 TW_HAS_MTP := true
 
