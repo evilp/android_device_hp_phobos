@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+
 # This file is executed by build/envsetup.sh, and can use anything
 # defined in envsetup.sh.
 #
@@ -20,3 +20,5 @@
 # function: add_lunch_combo generic-eng
 add_lunch_combo cm_phobos-userdebug
 add_lunch_combo cm_phobos-eng
+add_lunch_combo omni_phobos-userdebug
+add_lunch_combo omni_phobos-eng

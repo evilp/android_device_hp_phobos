@@ -34,7 +34,7 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-# prebuild kernel
+# prebuilt kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
 
@@ -49,6 +49,9 @@ PRODUCT_COPY_FILES += \
 # build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet
 
+# This device have enough room for precise dalvik
+PRODUCT_TAGS += dalvik.gc.type-precise
+
 # build.prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	BUILD_UTC_DATE=0 \
@@ -59,6 +62,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES := \
 	persist.sys.usb.config=mtp,adb
 
+# Tegra specific overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.tegra.nvmmlite=1 \
+	ro.zygote.disable_gl_preload=1
+
+# inherit dalvic heap settings
+$(call inherit-product, tablet-7in-hdpi-1024-dalvik-heap.mk)
+	
 # device Naming
 PRODUCT_NAME	:= full_phobos
 PRODUCT_DEVICE	:= phobos
