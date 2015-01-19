@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
-
 # Inherit from our custom product configuration
 #$(call inherit-product, vendor/omni/config/common_tablet.mk)
 
@@ -29,4 +25,4 @@ PRODUCT_NAME := omni_phobos
 PRODUCT_DEVICE := phobos
 PRODUCT_BRAND := hp
 PRODUCT_MANUFACTURER := Hewlett-Packard
-PRODUCT_MODEL := "Slate 21"
+PRODUCT_MODEL := 'Slate 21'

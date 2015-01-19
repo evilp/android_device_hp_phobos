@@ -12,14 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+# Inherit from those products. Most specific first.
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
 # inherit common language setup
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # inherit phobos vendor setup
 $(call inherit-product-if-exists, vendor/hp/phobos/phobos-vendor.mk)
@@ -40,8 +41,9 @@ PRODUCT_COPY_FILES += \
 
 # twrp
 PRODUCT_COPY_FILES += \
-	device/hp/phobos/twrp.fstab:recovery/root/etc/twrp.fstab
+	$(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
+# device
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/fstab.dalmore:root/fstab.dalmore \
 	$(LOCAL_PATH)/ueventd.dalmore.rc:root/ueventd.dalmore.rc
@@ -56,7 +58,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	BUILD_UTC_DATE=0 \
 	PRODUCT_MANUFACTURER=Hewlett-Packard \
-	PRODUCT_MODEL="Slate 21"
+	PRODUCT_MODEL='Slate 21'
 
 # specific properties
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -68,10 +70,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.zygote.disable_gl_preload=1
 
 # inherit dalvic heap settings
-$(call inherit-product, tablet-7in-hdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 	
 # device Naming
-PRODUCT_NAME	:= full_phobos
+PRODUCT_NAME	:= mars
 PRODUCT_DEVICE	:= phobos
 PRODUCT_BRAND	:= hp
-PRODUCT_MODEL	:= "Slate 21"
+PRODUCT_MANUFACTURER := Hewlett-Packard
+PRODUCT_MODEL	:= 'Slate 21'

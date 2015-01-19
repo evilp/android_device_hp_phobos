@@ -90,24 +90,24 @@ WIFI_DRIVER_FW_PATH_P2P     := "/vendor/firmware/bcm43341/fw_bcmdhd_p2p.bin"
 
 
 # SELINUX Defines
-BOARD_SEPOLICY_DIRS := \
-    device/hp/phobos/sepolicy
+#BOARD_SEPOLICY_DIRS := \
+#    device/hp/phobos/sepolicy
 
-BOARD_SEPOLICY_UNION := \
-    file_contexts \
-    genfs_contexts \
-    app.te \
-    bdaddwriter.te \
-    device.te \
-    drmserver.te \
-    init_shell.te \
-    file.te \
-    sensors_config.te \
-    system.te \
-    zygote.te \
-    healthd.te \
-    domain.te \
-    ueventd.te
+#BOARD_SEPOLICY_UNION := \
+#    file_contexts \
+#    genfs_contexts \
+#    app.te \
+#    bdaddwriter.te \
+#    device.te \
+#    drmserver.te \
+#    init_shell.te \
+#    file.te \
+#    sensors_config.te \
+#    system.te \
+#    zygote.te \
+#    healthd.te \
+#    domain.te \
+#    ueventd.te
     
 #twrp
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
